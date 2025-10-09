@@ -1,14 +1,15 @@
-//Importar estilos (StyleSheet)
+//1.- Importar estilos (StyleSheet)
 //Importar imagenes de fondo(ImageBackground)
 //De fondo
+//Importar componentes de React native
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import React, {useState} from 'react';
 
-// ------------------ Zona de componentes -------------------------------------------------
+//2.- ------------------ Zona de componentes -------------------------------------------------
 export default function App() {
 
-  const [Contador, setContador] = useState(0);
+  const [Contador, setContador] = useState(0); // Hooks
   
 
   return (
@@ -32,7 +33,7 @@ export default function App() {
 // State (useState) se compone una variable inicial del componente, y una funcion que es la encargada de detectar el cambio
 // No son exclusivos del cambio, cada componente tiene su estado
 
-//-------------------------- Estilos o hojas de estilos -----------------------------------------------------
+//3.--------------------------- Estilos o hojas de estilos -----------------------------------------------------
 const styles = StyleSheet.create({
   container: {
     flex: 1,
