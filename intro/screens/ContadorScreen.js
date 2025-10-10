@@ -21,9 +21,9 @@ export default function App() {
       <Text style={styles.texto2}>{Contador}</Text>
 
       <View style={styles.boton}>
-        <Button title='Agregar' onPress={() => setContador(Contador + 1)}></Button>
-        <Button title='Eleminar' onPress={() => setContador(Contador - 1)}></Button>
-        <Button title='Reiniciar' onPress={() => setContador(Contador - Contador)}></Button>
+        <Button color="yellow" title='Agregar' onPress={() => setContador(Contador + 1)}></Button>
+        <Button color="blue" title='Eleminar' onPress={() => setContador(Contador - 1)}></Button>
+        <Button color="brown" title='Reiniciar' onPress={() => setContador(Contador - Contador)}></Button>
       </View>
       
 

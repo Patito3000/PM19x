@@ -23,9 +23,9 @@ export default function App() {
       <Text style={styles.texto2}>{Contador}</Text>
 
       <View style={styles.boton}>
-        <Button title='Agregar' onPress={() => setContador(Contador + 1)}></Button>
-        <Button title='Eleminar' onPress={() => setContador(Contador - 1)}></Button>
-        <Button title='Reiniciar' onPress={() => setContador(Contador - Contador)}></Button>
+        <Button color="yellow" title='Agregar' onPress={() => setContador(Contador + 1)}></Button>
+        <Button color="blue" title='Eleminar' onPress={() => setContador(Contador - 1)}></Button>
+        <Button color="brown" title='Reiniciar' onPress={() => setContador(Contador - Contador)}></Button>
       </View>
       
 
@@ -79,4 +79,49 @@ const styles = StyleSheet.create({
     gap: 15,
   },
 });
+
+Codigo de la app.js
+//1.- Importar estilos (StyleSheet)
+//Importar imagenes de fondo(ImageBackground)
+//De fondo
+//Importar componentes de React native
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import ContadorScreen from './screens/ContadorScreen';
+import React, {useState} from 'react';
+
+//2.- ------------------ Zona de componentes -------------------------------------------------
+export default function App() {
+
+ 
+  
+
+  return (
+    // Visualizar el contenido (view)
+    // Agregar texto (text)
+    // Statusbar 
+    <ContadorScreen></ContadorScreen>
+  );
+}
+
+// Propiedades del boton
+//----------------------------------------- Hooks -----------------------------------------------
+// Hooks (estudiar)
+// State (useState) se compone una variable inicia del componente, y una funcion que es la encargada de detectar el cambio
+// No son exclusivos del cambio, cada componente tiene su estado
+
+//3.--------------------------- Estilos o hojas de estilos -----------------------------------------------------
+// No es css como tal
+// Con flex box daremos diseño a los botones (propiedad)
+// Podemos estandalizarlo en un solo archivo ya que es un objeto
+// 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+
 
