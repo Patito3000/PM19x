@@ -2,22 +2,16 @@
 //Importar imagenes de fondo(ImageBackground)
 //De fondo
 //Importar componentes de React native
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import ContadorScreen from './screens/ContadorScreen';
-import React, {useState} from 'react';
+
+import MenuScreen from './screens/MenuScreen';
 
 //2.- ------------------ Zona de componentes -------------------------------------------------
 export default function App() {
-
- 
-  
-
   return (
     // Visualizar el contenido (view)
     // Agregar texto (text)
     // Statusbar 
-    <ContadorScreen></ContadorScreen>
+    <MenuScreen/>
   );
 }
 
@@ -32,11 +26,3 @@ export default function App() {
 // Con flex box daremos diseño a los botones (propiedad)
 // Podemos estandalizarlo en un solo archivo ya que es un objeto
 // 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
