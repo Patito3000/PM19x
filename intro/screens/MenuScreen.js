@@ -13,7 +13,9 @@ export default function MenuScreen() {
         case 'botones':
             return <BotonesScreen/>
         case 'List':
-            return <ListScreen/>        
+            return <ListScreen/>      
+        case 'Section':
+            return <SectionListScreen/>
         case 'menu':
             default:
                  return (
@@ -22,7 +24,7 @@ export default function MenuScreen() {
                         <Button color='red' title='Pract:Contador' onPress={()=>setScreen('contador')} />
                         <Button color='yellow' title='Pract:Buttons' onPress={()=>setScreen('botones')} />
                         <Button color='blue' title='Pract:List' onPress={()=>setScreen('List')} />
-                        <Button color='green' title='Pract:Indicator' onPress={()=>setScreen('botones')} /> 
+                        <Button color='green' title='Pract:Section' onPress={()=>setScreen('Section')} /> 
                         <Button color='yellow' title='Pract:List' onPress={()=>setScreen('contador')} />
                         <Button color='pink' title='Pract:Modal' onPress={()=>setScreen('botones')} />
                         <Button color='black' title='Pract:Scroll' onPress={()=>setScreen('contador')} />
