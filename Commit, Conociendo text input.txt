@@ -1,3 +1,6 @@
+Commit, Conociendo text input
+
+
 import React,{useState} from 'react';
 import { View, Text, TextInput, Button,Alert, StyleSheet, Platform } from 'react-native'; 
 
