@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 
 import { productos } from '../store/productosStore'
 
+
 const ListScreen = () => {
   const [productList, setProductList] = useState(productos);
 
