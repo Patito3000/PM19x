@@ -5,6 +5,7 @@ import BotonesScreen from './BotonesScreen'
 import ListScreen from './ListScreen'
 import TextInputScreen from './TextInputScreen'
 import ImageScreen from './ImageScreen'
+import ModalScreenPrueba from './ModalScreen'
 
 //Pressable es otra forma de hacer botones
 
@@ -24,6 +25,8 @@ export default function MenuScreen() {
             return <TextInputScreen/>
         case 'Image':
             return <ImageScreen/>
+        case 'Modal':
+            return <ModalScreenPrueba/>
         
         case 'menu':
             default:
@@ -36,7 +39,7 @@ export default function MenuScreen() {
                         <Button color='green' title='Pract:Section' onPress={()=>setScreen('Section')} /> 
                         <Button color='yellow' title='Pract:Text' onPress={()=>setScreen('Text')} />
                         <Button color='pink' title='Pract:Image' onPress={()=>setScreen('Image')} />
-                        <Button color='black' title='Pract:Scroll' onPress={()=>setScreen('contador')} />
+                        <Button color='black' title='Pract:Scroll' onPress={()=>setScreen('Modal')} />
                         <Button color='red' title='Pract:Sheet' onPress={()=>setScreen('botones')} />
                         <Button color='brown' title='Pract:Text' onPress={()=>setScreen('botones')} />   
                          
