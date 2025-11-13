@@ -1,74 +1,112 @@
-import { Text, StyleSheet, View, FlatList } from 'react-native'
-import { useState, useEffect } from 'react';
+import { Text, StyleSheet, View, SectionList } from 'react-native'
+import React from 'react'
 
-
-import { productos } from '../store/productosStore'
-
-class Producto {
-  constructor(id, titulo, descripcion, precio) {
-    this.id = id;
-    this.titulo = titulo;
-    this.descripcion = descripcion;
-    this.precio = precio;
-  }
-}
-
-
-export const productos2 = [
-  new Producto('1', 'Auriculares inalambricos', 'Experimenta algo sensacional', 99),
-  new Producto('2', 'Computadoras', 'Para el trabajo y los videojuegos', 234),
-  new Producto('3', 'Auriculares inalambricos', 'Experimenta algo sensacional', 99),
-  new Producto('4', 'Computadoras', 'Para el trabajo y los videojuegos', 234),
-  new Producto('5', 'Auriculares inalambricos', 'Experimenta algo sensacional', 99),
-  new Producto('6', 'Computadoras', 'Para el trabajo y los videojuegos', 234),
-  new Producto('7', 'Computadoras', 'Para el trabajo y los videojuegos', 234),
-  new Producto('8', 'Auriculares inalambricos', 'Experimenta algo sensacional', 99),
-  new Producto('9', 'Computadoras', 'Para el trabajo y los videojuegos', 234),
-  
-  
+const houses = [
+  {
+    title: 'DC Comics',
+    data: [
+      'Superman',
+      'Batman',
+      'Wonder Woman (Mujer Maravilla)',
+      'The Flash (Flash)',
+      'Aquaman',
+      'Green Lantern (Linterna Verde)',
+      'Cyborg',
+      'Shazam',
+      'Green Arrow (Flecha Verde)',
+      'Batgirl (Batichica)',
+      'Nightwing (Ala Nocturna)',
+      'Supergirl',
+      'Martian Manhunter (Detective Marciano)',
+      'Harley Quinn',
+      'Joker',
+      'Catwoman (Gata Salvaje)',
+      'Lex Luthor',
+      'Poison Ivy (Hiedra Venenosa)',
+      'Robin',
+      'Deathstroke (Deathstroke el Terminator)',
+    ],
+  },
+  {
+    title: 'Marvel Comics',
+    data: [
+      'Spider-Man (Hombre Araña)',
+      'Iron Man (Hombre de Hierro)',
+      'Captain America (Capitán América)',
+      'Thor',
+      'Black Widow (Viuda Negra)',
+      'Hulk',
+      'Doctor Strange (Doctor Extraño)',
+      'Black Panther (Pantera Negra)',
+      'Captain Marvel (Capitana Marvel)',
+      'Wolverine',
+      'Deadpool',
+      'Scarlet Witch (Bruja Escarlata)',
+      'Ant-Man (Hombre Hormiga)',
+      'Wasp (Avispa)',
+      'Groot',
+      'Rocket Raccoon (Mapache Cohete)',
+      'Gamora',
+      'Drax the Destroyer (Drax el Destructor)',
+    ],
+  },
+  {
+    title: 'Anime',
+    data: [
+      'Son Goku (Dragon Ball)',
+      'Naruto Uzumaki (Naruto)',
+      'Monkey D. Luffy (One Piece)',
+      'Sailor Moon (Sailor Moon)',
+      'Kenshin Himura (Rurouni Kenshin)',
+      'Edward Elric (Fullmetal Alchemist)',
+      'Inuyasha (Inuyasha)',
+      'Sakura Kinomoto (Cardcaptor Sakura)',
+      'Light Yagami (Death Note)',
+      'Eren Yeager (Attack on Titan)',
+      'Lelouch Lamperouge (Code Geass)',
+      'Vegeta (Dragon Ball)',
+      'Ichigo Kurosaki (Bleach)',
+      'Kaneki Ken (Tokyo Ghoul)',
+      'Gon Freecss (Hunter x Hunter)',
+      'Asuka Langley Soryu (Neon Genesis Evangelion)',
+      'Saitama (One Punch Man)',
+      'Mikasa Ackerman (Attack on Titan)',
+      'Natsu Dragneel (Fairy Tail)',
+      'Usagi Tsukino (Sailor Moon)',
+      'Sasuke Uchiha (Naruto)',
+    ],
+  },
 ];
 
-const ListScreen = () => {
-  const [productList, setProductList] = useState(productos2);
-
-
-    return (
-      <View style={styles.lista}>
-        <FlatList
-            data={productList}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => (
-              <View style={styles.item}>
-                <Text>{item.titulo}</Text>
-                <Text>{item.descripcion}</Text>
-                <Text>{item.precio}</Text>
-                <Text style0={styles.detalles}>Ver detalles</Text>
-              </View>
-            )}
-            
-        />
-      </View>
-
-     
-
-    )
-  
+const SectionListScreen = () => {
+  return (
+    <View style={styles.container}>
+      <SectionList
+        sections={houses}
+        keyExtractor={(item) => item}
+        renderItem={({ item }) => <Text style={styles.item}>{item}e</Text>}
+        renderSectionHeader={({ section }) => (
+          <Text style={styles.sectionHeader}>{section.title}</Text>
+        )}
+      />
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
-    lista: {
-      paddingVertical: 200
-      
-    },
+  container: {
+    marginTop: 20,
+  },
+  item: {
+    paddingVertical: 6,
+    paddingHorizontal: 10,
+  },
+  sectionHeader: {
+    backgroundColor: '#eee',
+    paddingVertical: 8,
+    paddingHorizontal: 10,
+    fontWeight: 'bold',
+  }
+});
 
-    item: {
-      padding: 15, // Espacio interno del item
-      marginVertical: 8, // Separación vertical entre items
-      marginHorizontal: 16, // Separación horizontal desde los bordes
-      backgroundColor: '#f0f0f0', 
-    }
-})
-
-
-
-export default ListScreen;
+export default SectionListScreen;

@@ -6,6 +6,7 @@ import ListScreen from './ListScreen'
 import TextInputScreen from './TextInputScreen'
 import ImageScreen from './ImageScreen'
 import ModalScreenPrueba from './ModalScreen'
+import IndicatorScreen from './IndicatorScreen'
 
 //Pressable es otra forma de hacer botones
 
@@ -27,7 +28,8 @@ export default function MenuScreen() {
             return <ImageScreen/>
         case 'Modal':
             return <ModalScreenPrueba/>
-        
+        case 'Indicador':
+            return <IndicatorScreen/>
         case 'menu':
             default:
                  return (
@@ -40,7 +42,7 @@ export default function MenuScreen() {
                         <Button color='yellow' title='Pract:Text' onPress={()=>setScreen('Text')} />
                         <Button color='pink' title='Pract:Image' onPress={()=>setScreen('Image')} />
                         <Button color='black' title='Pract:Scroll' onPress={()=>setScreen('Modal')} />
-                        <Button color='red' title='Pract:Sheet' onPress={()=>setScreen('botones')} />
+                        <Button color='red' title='Pract:Indicador' onPress={()=>setScreen('Indicador')} />
                         <Button color='brown' title='Pract:Text' onPress={()=>setScreen('botones')} />   
                          
                         <Pressable>

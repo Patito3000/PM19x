@@ -1,12 +1,7 @@
 import { Text, StyleSheet, View, SectionList } from 'react-native'
-import React, { Component } from 'react'
+import React from 'react'
 
-interface Houses {
-  title: string;
-  data: string[];
-}
-
-const houses: Houses[] = [
+const houses = [
   {
     title: 'DC Comics',
     data: [
@@ -82,18 +77,36 @@ const houses: Houses[] = [
     ],
   },
 ];
-const SectionListScreen = () =>{
 
-    return (
-      <View>
-        <SectionList sections={houses}
-        keyExtractor={( item ) => item}
-        renderItem={ ({item}) => <Text>{item}e</Text>}
-        />
-      </View>
-
-    )
-  
+const SectionListScreen = () => {
+  return (
+    <View style={styles.container}>
+      <SectionList
+        sections={houses}
+        keyExtractor={(item) => item}
+        renderItem={({ item }) => <Text style={styles.item}>{item}e</Text>}
+        renderSectionHeader={({ section }) => (
+          <Text style={styles.sectionHeader}>{section.title}</Text>
+        )}
+      />
+    </View>
+  )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 20,
+  },
+  item: {
+    paddingVertical: 6,
+    paddingHorizontal: 10,
+  },
+  sectionHeader: {
+    backgroundColor: '#eee',
+    paddingVertical: 8,
+    paddingHorizontal: 10,
+    fontWeight: 'bold',
+  }
+});
 
 export default SectionListScreen;
